@@ -48,7 +48,7 @@ contract WhiteList {
         balances[_to] += _amount;
     }
 
-    function mint(uint256 _amount) external checkWhiltelist(msg.sender) {
+    function mint(uint256 _amount) public checkWhiltelist(msg.sender) {
         totalSupply_ += _amount;
         balances[msg.sender] += _amount;
     }
