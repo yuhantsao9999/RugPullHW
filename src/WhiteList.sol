@@ -2,6 +2,12 @@
 pragma solidity ^0.8.17;
 
 contract WhiteList {
+    address public _owner;
+    address public pauser;
+    bool public paused;
+    address public blacklister;
+    mapping(address => uint256) internal blacklisted;
+
     string public name;
     string public symbol;
     uint8 public decimals;
@@ -11,10 +17,15 @@ contract WhiteList {
 
     mapping(address => uint256) internal balances;
     mapping(address => mapping(address => uint256)) internal allowed;
-    uint256 internal totalSupply_ = 0;
+    uint256 internal totalSupply_;
     mapping(address => bool) internal minters;
     mapping(address => uint256) internal minterAllowed;
 
+    address public _rescuer;
+    bytes32 public publicDOMAIN_SEPARATOR;
+    mapping(address => mapping(bytes32 => bool)) _authorizationStates;
+    mapping(address => uint256) internal _permitNonces;
+    uint8 public _initializedVersion;
     mapping(address => bool) public whitelist;
 
     function setWhiltelist(address _address) public {
