@@ -2,9 +2,9 @@
 
 ## step 1
 
-`cd src/WhiteList.sol`
+`cd src`
 
-change endpoint from infura or alchemy 
+enter WhiteList.sol to change endpoint from infura or alchemy 
 
 ## step 2
 
