@@ -1,4 +1,4 @@
 # RugPullHW
 
-cd test
-forge test
+`cd test`
+`forge test`
