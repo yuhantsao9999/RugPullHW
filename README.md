@@ -2,14 +2,12 @@
 
 ## step 1
 
-`cd src`
-
-enter WhiteList.sol to change endpoint from infura or alchemy 
+`cd test`
 
 ## step 2
 
-`cd ..`
-
-`cd test`
+change endpoint from infura or alchemy in WhiteList.t.sol setup function
+ 
+## step 2
 
 `forge test`
