@@ -28,7 +28,9 @@ contract WhiteListTest is Test {
         // Fork mainnet
         //TODO:
         //please use your endpoint
-        vm.createSelectFork("use your endpoint");
+        vm.createSelectFork(
+            "https://mainnet.infura.io/v3/fee9656c282a4b019667a70c1482dee0"
+        );
     }
 
     function testMint() public {
