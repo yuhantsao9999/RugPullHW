@@ -1,12 +1,12 @@
 # RugPullHW
 
-##step 1
+## step 1
 
 `cd src/WhiteList.sol`
 
 change endpoint from infura or alchemy 
 
-##step 2
+## step 2
 
 `cd ..`
 
