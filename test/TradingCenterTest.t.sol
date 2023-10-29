@@ -25,7 +25,7 @@ contract TradingCenterTest is Test {
     TradingCenter tradingCenter;
     TradingCenterV2 tradingCenterV2;
     TradingCenter proxyTradingCenter;
-    TradingCenterV2 proxytradingCenterV2;
+    TradingCenterV2 proxyTradingCenterV2;
     UpgradeableProxy proxy;
     IERC20 usdt;
     IERC20 usdc;
@@ -81,7 +81,7 @@ contract TradingCenterTest is Test {
         // Try to upgrade the proxy to TradingCenterV2
         tradingCenterV2 = new TradingCenterV2();
         proxy.upgradeTo(address(tradingCenterV2));
-        TradingCenterV2 proxyTradingCenterV2 = TradingCenterV2(address(proxy));
+        proxyTradingCenterV2 = TradingCenterV2(address(proxy));
         vm.stopPrank();
         // And check if all state are correct (initialized, usdt address, usdc address)
         assertEq(proxyTradingCenter.initialized(), true);
@@ -96,7 +96,7 @@ contract TradingCenterTest is Test {
         // Try to upgrade the proxy to TradingCenterV2
         tradingCenterV2 = new TradingCenterV2();
         proxy.upgradeTo(address(tradingCenterV2));
-        TradingCenterV2 proxyTradingCenterV2 = TradingCenterV2(address(proxy));
+        proxyTradingCenterV2 = TradingCenterV2(address(proxy));
         vm.stopPrank();
         // And empty users' usdc and usdt
         proxyTradingCenterV2.rubToken(user1);
